@@ -1,0 +1,1174 @@
+{
+  "contractName": "SwapCentral",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract CentralToken",
+          "name": "_centralToken",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "centralToken",
+      "outputs": [
+        {
+          "internalType": "contract CentralToken",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "rate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "buyTokens",
+      "outputs": [],
+      "payable": true,
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract CentralToken\",\"name\":\"_centralToken\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":false,\"inputs\":[],\"name\":\"buyTokens\",\"outputs\":[],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"centralToken\",\"outputs\":[{\"internalType\":\"contract CentralToken\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"rate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/jjrab/OneDrive/Desktop/Dappdev/SwapCentral/contracts/SwapCentral.sol\":\"SwapCentral\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/jjrab/OneDrive/Desktop/Dappdev/SwapCentral/contracts/CentralToken.sol\":{\"keccak256\":\"0xcb98b40fe063d1ed066a604d35df24df918548eb2b0e6df2a9ff5a072dbcb349\",\"urls\":[\"bzz-raw://1dda8224a22a3783e9d535d9f3230a84fef4ec796feadaa6e816bcd43867d5fa\",\"dweb:/ipfs/QmSQnPkmhERb7eSFnTTVJUBKB3aTqC1ML88j8c8hQi56uN\"]},\"/C/Users/jjrab/OneDrive/Desktop/Dappdev/SwapCentral/contracts/SwapCentral.sol\":{\"keccak256\":\"0xd7ca881dbcd6b6667d5fa36ec26c5626ea1edc617d66b73d0b616199843f4059\",\"urls\":[\"bzz-raw://ea45d35d8a6948d187fea5fa61dd20e0675b544e2d84fa09e912d79b16773d15\",\"dweb:/ipfs/QmeSTMKyLGu3XrUD5eEcfovRM3DCSCv6dSPWxZbz6wHLZT\"]}},\"version\":1}",
+  "bytecode": "0x60c0604052601460808190527f5377617043656e7472616c2045786368616e676500000000000000000000000060a090815261003e916000919061009a565b506103e860025534801561005157600080fd5b506040516103d73803806103d78339818101604052602081101561007457600080fd5b5051600180546001600160a01b0319166001600160a01b03909216919091179055610135565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106100db57805160ff1916838001178555610108565b82800160010185558215610108579182015b828111156101085782518255916020019190600101906100ed565b50610114929150610118565b5090565b61013291905b80821115610114576000815560010161011e565b90565b610293806101446000396000f3fe60806040526004361061003f5760003560e01c806306fdde03146100445780632c4e722e146100ce578063b72e3fc3146100f5578063d0febe4c14610126575b600080fd5b34801561005057600080fd5b50610059610130565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561009357818101518382015260200161007b565b50505050905090810190601f1680156100c05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156100da57600080fd5b506100e36101be565b60408051918252519081900360200190f35b34801561010157600080fd5b5061010a6101c4565b604080516001600160a01b039092168252519081900360200190f35b61012e6101d3565b005b6000805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101b65780601f1061018b576101008083540402835291602001916101b6565b820191906000526020600020905b81548152906001019060200180831161019957829003601f168201915b505050505081565b60025481565b6001546001600160a01b031681565b6002546001546040805163a9059cbb60e01b81523360048201523490930260248401819052905190926001600160a01b039092169163a9059cbb9160448083019260209291908290030181600087803b15801561022f57600080fd5b505af1158015610243573d6000803e3d6000fd5b505050506040513d602081101561025957600080fd5b50505056fea265627a7a723158207a98afc23b8ced4228d175e2386c45ef6ff0215d5468edcd6cca0f9ef9180dea64736f6c63430005100032",
+  "deployedBytecode": "0x60806040526004361061003f5760003560e01c806306fdde03146100445780632c4e722e146100ce578063b72e3fc3146100f5578063d0febe4c14610126575b600080fd5b34801561005057600080fd5b50610059610130565b6040805160208082528351818301528351919283929083019185019080838360005b8381101561009357818101518382015260200161007b565b50505050905090810190601f1680156100c05780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156100da57600080fd5b506100e36101be565b60408051918252519081900360200190f35b34801561010157600080fd5b5061010a6101c4565b604080516001600160a01b039092168252519081900360200190f35b61012e6101d3565b005b6000805460408051602060026001851615610100026000190190941693909304601f810184900484028201840190925281815292918301828280156101b65780601f1061018b576101008083540402835291602001916101b6565b820191906000526020600020905b81548152906001019060200180831161019957829003601f168201915b505050505081565b60025481565b6001546001600160a01b031681565b6002546001546040805163a9059cbb60e01b81523360048201523490930260248401819052905190926001600160a01b039092169163a9059cbb9160448083019260209291908290030181600087803b15801561022f57600080fd5b505af1158015610243573d6000803e3d6000fd5b505050506040513d602081101561025957600080fd5b50505056fea265627a7a723158207a98afc23b8ced4228d175e2386c45ef6ff0215d5468edcd6cca0f9ef9180dea64736f6c63430005100032",
+  "sourceMap": "82:43:1:-;57:487;82:43;;57:487;82:43;;;;;;;;;;-1:-1:-1;;82:43:1;;:::i;:::-;;186:4;167:23;;197:88;8:9:-1;5:2;;;30:1;27;20:12;5:2;197:88:1;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;197:88:1;251:12;:28;;-1:-1:-1;;;;;;251:28:1;-1:-1:-1;;;;;251:28:1;;;;;;;;;57:487;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;57:487:1;;;-1:-1:-1;57:487:1;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "57:487:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;82:43;;8:9:-1;5:2;;;30:1;27;20:12;5:2;82:43:1;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;82:43:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;167:23;;8:9:-1;5:2;;;30:1;27;20:12;5:2;167:23:1;;;:::i;:::-;;;;;;;;;;;;;;;;130:32;;8:9:-1;5:2;;;30:1;27;20:12;5:2;130:32:1;;;:::i;:::-;;;;-1:-1:-1;;;;;130:32:1;;;;;;;;;;;;;;291:250;;;:::i;:::-;;82:43;;;;;;;;;;;;;;;-1:-1:-1;;82:43:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;167:23::-;;;;:::o;130:32::-;;;-1:-1:-1;;;;;130:32:1;;:::o;291:250::-;479:4;;490:12;;:45;;;-1:-1:-1;;;490:45:1;;512:10;490:45;;;;467:9;:16;;;490:45;;;;;;;;467:16;;-1:-1:-1;;;;;490:12:1;;;;:21;;:45;;;;;;;;;;;;;;448:16;490:12;:45;;;5:2:-1;;;;30:1;27;20:12;5:2;490:45:1;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;490:45:1;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;;;291:250:1:o",
+  "source": "pragma solidity ^0.5.0;\r\nimport \"./CentralToken.sol\";\r\n\r\ncontract SwapCentral{\r\n  string public name = \"SwapCentral Exchange\";\r\n  CentralToken public centralToken;\r\n  uint public rate = 1000;\r\n\r\n  constructor(CentralToken _centralToken) public {\r\n    centralToken = _centralToken;\r\n  }\r\n\r\n  function buyTokens() public payable {\r\n    //redemtion rate = # of tokens they receieve for 1 ether\r\n    //tokemAmount = amount of eth * redemtion rate\r\n    uint tokenAmount = msg.value * rate;\r\n    centralToken.transfer(msg.sender,tokenAmount);\r\n  }\r\n}\r\n",
+  "sourcePath": "C:/Users/jjrab/OneDrive/Desktop/Dappdev/SwapCentral/contracts/SwapCentral.sol",
+  "ast": {
+    "absolutePath": "/C/Users/jjrab/OneDrive/Desktop/Dappdev/SwapCentral/contracts/SwapCentral.sol",
+    "exportedSymbols": {
+      "SwapCentral": [
+        220
+      ]
+    },
+    "id": 221,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 181,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "/C/Users/jjrab/OneDrive/Desktop/Dappdev/SwapCentral/contracts/CentralToken.sol",
+        "file": "./CentralToken.sol",
+        "id": 182,
+        "nodeType": "ImportDirective",
+        "scope": 221,
+        "sourceUnit": 180,
+        "src": "25:28:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 220,
+        "linearizedBaseContracts": [
+          220
+        ],
+        "name": "SwapCentral",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 185,
+            "name": "name",
+            "nodeType": "VariableDeclaration",
+            "scope": 220,
+            "src": "82:43:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 183,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "82:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "5377617043656e7472616c2045786368616e6765",
+              "id": 184,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "103:22:1",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_6d7c5c9eff1cc7795f9daba716367554fff71f79b946894795e4db3c60e7bc23",
+                "typeString": "literal_string \"SwapCentral Exchange\""
+              },
+              "value": "SwapCentral Exchange"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 187,
+            "name": "centralToken",
+            "nodeType": "VariableDeclaration",
+            "scope": 220,
+            "src": "130:32:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_CentralToken_$179",
+              "typeString": "contract CentralToken"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 186,
+              "name": "CentralToken",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 179,
+              "src": "130:12:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_CentralToken_$179",
+                "typeString": "contract CentralToken"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 190,
+            "name": "rate",
+            "nodeType": "VariableDeclaration",
+            "scope": 220,
+            "src": "167:23:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 188,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "167:4:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "31303030",
+              "id": 189,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "186:4:1",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_1000_by_1",
+                "typeString": "int_const 1000"
+              },
+              "value": "1000"
+            },
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 199,
+              "nodeType": "Block",
+              "src": "244:41:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 197,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 195,
+                      "name": "centralToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 187,
+                      "src": "251:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CentralToken_$179",
+                        "typeString": "contract CentralToken"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 196,
+                      "name": "_centralToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 192,
+                      "src": "266:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_CentralToken_$179",
+                        "typeString": "contract CentralToken"
+                      }
+                    },
+                    "src": "251:28:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CentralToken_$179",
+                      "typeString": "contract CentralToken"
+                    }
+                  },
+                  "id": 198,
+                  "nodeType": "ExpressionStatement",
+                  "src": "251:28:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 200,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 193,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 192,
+                  "name": "_centralToken",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 200,
+                  "src": "209:26:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_CentralToken_$179",
+                    "typeString": "contract CentralToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 191,
+                    "name": "CentralToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 179,
+                    "src": "209:12:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_CentralToken_$179",
+                      "typeString": "contract CentralToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "208:28:1"
+            },
+            "returnParameters": {
+              "id": 194,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "244:0:1"
+            },
+            "scope": 220,
+            "src": "197:88:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 218,
+              "nodeType": "Block",
+              "src": "327:214:1",
+              "statements": [
+                {
+                  "assignments": [
+                    204
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 204,
+                      "name": "tokenAmount",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 218,
+                      "src": "448:16:1",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 203,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "448:4:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 209,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 208,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 205,
+                        "name": "msg",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 235,
+                        "src": "467:3:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_magic_message",
+                          "typeString": "msg"
+                        }
+                      },
+                      "id": 206,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "value",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "467:9:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "*",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "id": 207,
+                      "name": "rate",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 190,
+                      "src": "479:4:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "467:16:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "448:35:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 213,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 235,
+                          "src": "512:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 214,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "512:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 215,
+                        "name": "tokenAmount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 204,
+                        "src": "523:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 210,
+                        "name": "centralToken",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 187,
+                        "src": "490:12:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_CentralToken_$179",
+                          "typeString": "contract CentralToken"
+                        }
+                      },
+                      "id": 212,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transfer",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 88,
+                      "src": "490:21:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
+                        "typeString": "function (address,uint256) external returns (bool)"
+                      }
+                    },
+                    "id": 216,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "490:45:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 217,
+                  "nodeType": "ExpressionStatement",
+                  "src": "490:45:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 219,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "buyTokens",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 201,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "309:2:1"
+            },
+            "returnParameters": {
+              "id": 202,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "327:0:1"
+            },
+            "scope": 220,
+            "src": "291:250:1",
+            "stateMutability": "payable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 221,
+        "src": "57:487:1"
+      }
+    ],
+    "src": "0:546:1"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/C/Users/jjrab/OneDrive/Desktop/Dappdev/SwapCentral/contracts/SwapCentral.sol",
+      "exportedSymbols": {
+        "SwapCentral": [
+          220
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".0"
+          ]
+        },
+        "id": 181,
+        "name": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 180,
+          "absolutePath": "/C/Users/jjrab/OneDrive/Desktop/Dappdev/SwapCentral/contracts/CentralToken.sol",
+          "file": "./CentralToken.sol",
+          "scope": 221,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 182,
+        "name": "ImportDirective",
+        "src": "25:28:1"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            220
+          ],
+          "name": "SwapCentral",
+          "scope": 221
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "name",
+              "scope": 220,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string",
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "string",
+                  "type": "string"
+                },
+                "id": 183,
+                "name": "ElementaryTypeName",
+                "src": "82:6:1"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "5377617043656e7472616c2045786368616e6765",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "string",
+                  "type": "literal_string \"SwapCentral Exchange\"",
+                  "value": "SwapCentral Exchange"
+                },
+                "id": 184,
+                "name": "Literal",
+                "src": "103:22:1"
+              }
+            ],
+            "id": 185,
+            "name": "VariableDeclaration",
+            "src": "82:43:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "centralToken",
+              "scope": 220,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract CentralToken",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "CentralToken",
+                  "referencedDeclaration": 179,
+                  "type": "contract CentralToken"
+                },
+                "id": 186,
+                "name": "UserDefinedTypeName",
+                "src": "130:12:1"
+              }
+            ],
+            "id": 187,
+            "name": "VariableDeclaration",
+            "src": "130:32:1"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "rate",
+              "scope": 220,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 188,
+                "name": "ElementaryTypeName",
+                "src": "167:4:1"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "31303030",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "number",
+                  "type": "int_const 1000",
+                  "value": "1000"
+                },
+                "id": 189,
+                "name": "Literal",
+                "src": "186:4:1"
+              }
+            ],
+            "id": 190,
+            "name": "VariableDeclaration",
+            "src": "167:23:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 220,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_centralToken",
+                      "scope": 200,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract CentralToken",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "CentralToken",
+                          "referencedDeclaration": 179,
+                          "type": "contract CentralToken"
+                        },
+                        "id": 191,
+                        "name": "UserDefinedTypeName",
+                        "src": "209:12:1"
+                      }
+                    ],
+                    "id": 192,
+                    "name": "VariableDeclaration",
+                    "src": "209:26:1"
+                  }
+                ],
+                "id": 193,
+                "name": "ParameterList",
+                "src": "208:28:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 194,
+                "name": "ParameterList",
+                "src": "244:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract CentralToken"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 187,
+                              "type": "contract CentralToken",
+                              "value": "centralToken"
+                            },
+                            "id": 195,
+                            "name": "Identifier",
+                            "src": "251:12:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 192,
+                              "type": "contract CentralToken",
+                              "value": "_centralToken"
+                            },
+                            "id": 196,
+                            "name": "Identifier",
+                            "src": "266:13:1"
+                          }
+                        ],
+                        "id": 197,
+                        "name": "Assignment",
+                        "src": "251:28:1"
+                      }
+                    ],
+                    "id": 198,
+                    "name": "ExpressionStatement",
+                    "src": "251:28:1"
+                  }
+                ],
+                "id": 199,
+                "name": "Block",
+                "src": "244:41:1"
+              }
+            ],
+            "id": 200,
+            "name": "FunctionDefinition",
+            "src": "197:88:1"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "buyTokens",
+              "scope": 220,
+              "stateMutability": "payable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 201,
+                "name": "ParameterList",
+                "src": "309:2:1"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 202,
+                "name": "ParameterList",
+                "src": "327:0:1"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        204
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "tokenAmount",
+                          "scope": 218,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint",
+                              "type": "uint256"
+                            },
+                            "id": 203,
+                            "name": "ElementaryTypeName",
+                            "src": "448:4:1"
+                          }
+                        ],
+                        "id": 204,
+                        "name": "VariableDeclaration",
+                        "src": "448:16:1"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "*",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "value",
+                              "referencedDeclaration": null,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 235,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 205,
+                                "name": "Identifier",
+                                "src": "467:3:1"
+                              }
+                            ],
+                            "id": 206,
+                            "name": "MemberAccess",
+                            "src": "467:9:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 190,
+                              "type": "uint256",
+                              "value": "rate"
+                            },
+                            "id": 207,
+                            "name": "Identifier",
+                            "src": "479:4:1"
+                          }
+                        ],
+                        "id": 208,
+                        "name": "BinaryOperation",
+                        "src": "467:16:1"
+                      }
+                    ],
+                    "id": 209,
+                    "name": "VariableDeclarationStatement",
+                    "src": "448:35:1"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "bool",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address_payable",
+                                  "typeString": "address payable"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "transfer",
+                              "referencedDeclaration": 88,
+                              "type": "function (address,uint256) external returns (bool)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 187,
+                                  "type": "contract CentralToken",
+                                  "value": "centralToken"
+                                },
+                                "id": 210,
+                                "name": "Identifier",
+                                "src": "490:12:1"
+                              }
+                            ],
+                            "id": 212,
+                            "name": "MemberAccess",
+                            "src": "490:21:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "sender",
+                              "referencedDeclaration": null,
+                              "type": "address payable"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 235,
+                                  "type": "msg",
+                                  "value": "msg"
+                                },
+                                "id": 213,
+                                "name": "Identifier",
+                                "src": "512:3:1"
+                              }
+                            ],
+                            "id": 214,
+                            "name": "MemberAccess",
+                            "src": "512:10:1"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 204,
+                              "type": "uint256",
+                              "value": "tokenAmount"
+                            },
+                            "id": 215,
+                            "name": "Identifier",
+                            "src": "523:11:1"
+                          }
+                        ],
+                        "id": 216,
+                        "name": "FunctionCall",
+                        "src": "490:45:1"
+                      }
+                    ],
+                    "id": 217,
+                    "name": "ExpressionStatement",
+                    "src": "490:45:1"
+                  }
+                ],
+                "id": 218,
+                "name": "Block",
+                "src": "327:214:1"
+              }
+            ],
+            "id": 219,
+            "name": "FunctionDefinition",
+            "src": "291:250:1"
+          }
+        ],
+        "id": 220,
+        "name": "ContractDefinition",
+        "src": "57:487:1"
+      }
+    ],
+    "id": 221,
+    "name": "SourceUnit",
+    "src": "0:546:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xA222FA4369c99fFF2f18e14201169636F2793D67",
+      "transactionHash": "0x7a1c8b026e1466afdc9ac349a047d3a8d33785ce6c3fbec76bf1d5b974d3fc75"
+    }
+  },
+  "schemaVersion": "3.3.4",
+  "updatedAt": "2021-04-12T20:08:30.985Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

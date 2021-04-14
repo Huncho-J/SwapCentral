@@ -1,0 +1,29 @@
+{
+  "name": "SwapCentral",
+  "version": "1.0.0",
+  "description": "A crypto Exchange platform",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Huncho-J/SwapCentral.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Huncho-J/SwapCentral/issues"
+  },
+  "homepage": "https://github.com/Huncho-J/SwapCentral#readme",
+  "dependencies": {
+    "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
+    "identicon.js": "^2.3.3",
+    "web3": "^1.3.5"
+  }
+}
