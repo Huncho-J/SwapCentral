@@ -6,7 +6,13 @@ contract SwapCentral{
   CentralToken public centralToken;
   uint public rate = 1000;
 
-  event CentralTokenPurchased(
+  event CentralTokensPurchased(
+    address account,
+    address token,
+    uint amount,
+    uint rate
+  );
+  event CentralTokensSold(
     address account,
     address token,
     uint amount,
@@ -28,6 +34,21 @@ contract SwapCentral{
     centralToken.transfer(msg.sender,tokenAmount);
 
     //Emit purchase event
-    emit CentralTokenPurchased(msg.sender, address(centralToken), tokenAmount, rate);
+    emit CentralTokensPurchased(msg.sender, address(centralToken), tokenAmount, rate);
+  }
+
+  function sellTokens(uint _amount) public {
+    //calculate ether to send
+    uint etherAmount = _amount / rate;
+    //check contract balance
+    require(address(this).balance >= etherAmount);
+    //user can't sell more than they have
+    require(centralToken.balanceOf(msg.sender) >= _amount);
+    //send ether to investor
+    msg.sender.transfer(etherAmount);
+
+    //receieve SCT Tokens
+    centralToken.TransferFrom(msg.sender, address(this), _amount);
+    emit CentralTokensSold(msg.sender, address(centralToken),_amount, rate);
   }
 }
