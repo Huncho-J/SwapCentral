@@ -1,8 +1,10 @@
 
 import React, {Component} from 'react';
 import Web3 from 'web3';
-import CentralToken from './contracts/CentralToken.json'
-import SwapCentral from './contracts/SwapCentral.json'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Identicon from 'identicon.js';
+import CentralToken from './contracts/CentralToken.json';
+import SwapCentral from './contracts/SwapCentral.json';
 //import Main from './main'
 
 class App extends Component {
@@ -37,14 +39,14 @@ class App extends Component {
       const swapCentralData = SwapCentral.networks[networkId]
       if(swapCentralData){
        const swapCentral = new web3.eth.Contract(SwapCentral.abi, swapCentralData.address)
-        //set TodoList state
+        //set contract state
         this.setState({swapCentral: swapCentral})
       }
-
+      //Load CentralToken contract
       const centralTokenData = CentralToken.networks[networkId]
       if(centralTokenData){
-       const swapCentral = new web3.eth.Contract(CentralToken.abi, centralTokenData.address)
-        //set TodoList state
+       const centralToken = new web3.eth.Contract(CentralToken.abi, centralTokenData.address)
+        //set contract state
         this.setState({centralToken: CentralToken})
       }else{
      window.alert('contract was not deployed to test network.')
@@ -58,20 +60,35 @@ class App extends Component {
       this.state = {
         account: '',
         swapCentral:null,
+        centralToken:null,
         loading: true
       }
     }
   render(){
   return (
-    <div className="App">
-      <header className="App-header">
+    <nav className="navbar navbar-inverse bg-dark shadow">
+    <div className="container-fluid">
+      <div className="navbar-header">
+        <a className="navbar-brand" href="#">SwapCentral Exchange</a>
+      </div>
+      <ul className="nav navbar-nav navbar-right">
+        <li>
+        <small>
+        <span id="account"className="glyphicon glyphicon-user bg-success"></span>{this.props.account}
+        </small>
+        {this.props.account
+         ? <img className="ml-2"
+            width='30'
+            height='30'
+            src={`data:image/pngbase64, ${new Identicon(this.props.account,30).toString()}`}
+          />
+          :<span></span>
+        }
 
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-
-      </header>
+      </li>
+      </ul>
     </div>
+  </nav>
   );
 }
 }
