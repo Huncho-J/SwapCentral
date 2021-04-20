@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import Web3 from 'web3';
 import Navbar from './Navbar';
+import Main from './Main';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Identicon from 'identicon.js';
 import CentralToken from './contracts/CentralToken.json';
@@ -51,6 +52,10 @@ class App extends Component {
        const centralToken = new web3.eth.Contract(CentralToken.abi, centralTokenData.address)
         //set contract state
         this.setState({centralToken: CentralToken})
+        //set current user account CentralToken balance
+        let centralTokenBalance = await centralToken.methods.balanceOf(this.state.account).call()
+        this.setState({centralTokenBalance})
+
       }else{
      window.alert('contract was not deployed to test network.')
    }
@@ -65,6 +70,7 @@ class App extends Component {
         swapCentral:null,
         centralToken:null,
         ethBalance:'0',
+        centralTokenBalance:'0',
         loading: true
       }
     }
@@ -73,6 +79,16 @@ class App extends Component {
 
     <div>
       <Navbar account = {this.state.account} />
+      <div className="container-fluid mt-5">
+        <div className="row">
+          <main role="main" className="col-lg-12 d-flex text-center">
+            <div className="content mr-auto ml-auto">
+              <Main />
+            </div>
+          </main>
+        </div>
+      </div>
+
     </div>
 
   );
