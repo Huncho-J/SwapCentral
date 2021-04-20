@@ -1,6 +1,7 @@
 
 import React, {Component} from 'react';
 import Web3 from 'web3';
+import Navbar from './Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Identicon from 'identicon.js';
 import CentralToken from './contracts/CentralToken.json';
@@ -31,6 +32,8 @@ class App extends Component {
       //load accounts
       const accounts = await web3.eth.getAccounts()
       this.setState({account: accounts[0]})
+      const ethBalance = await web3.eth.getBalance(this.state.account)
+      this.setState({ethBalance: ethBalance})
 
       //Get Network ID
       const networkId = await web3.eth.net.getId()
@@ -61,34 +64,17 @@ class App extends Component {
         account: '',
         swapCentral:null,
         centralToken:null,
+        ethBalance:'0',
         loading: true
       }
     }
   render(){
   return (
-    <nav className="navbar navbar-inverse bg-dark shadow">
-    <div className="container-fluid">
-      <div className="navbar-header">
-        <a className="navbar-brand" href="#">SwapCentral Exchange</a>
-      </div>
-      <ul className="nav navbar-nav navbar-right">
-        <li>
-        <small>
-        <span id="account"className="glyphicon glyphicon-user bg-success"></span>{this.props.account}
-        </small>
-        {this.props.account
-         ? <img className="ml-2"
-            width='30'
-            height='30'
-            src={`data:image/pngbase64, ${new Identicon(this.props.account,30).toString()}`}
-          />
-          :<span></span>
-        }
 
-      </li>
-      </ul>
+    <div>
+      <Navbar account = {this.state.account} />
     </div>
-  </nav>
+
   );
 }
 }
