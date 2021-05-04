@@ -51,18 +51,40 @@ class App extends Component {
       if(centralTokenData){
        const centralToken = new web3.eth.Contract(CentralToken.abi, centralTokenData.address)
         //set contract state
-        this.setState({centralToken: CentralToken})
+        this.setState({centralToken: centralToken})
         //set current user account CentralToken balance
         let centralTokenBalance = await centralToken.methods.balanceOf(this.state.account).call()
         this.setState({centralTokenBalance})
 
-      }else{
+        //let sctBal = await centralToken.methods.balanceOf(this.state.swapCentral.address).call()
+        //console.log(sctBa)
+
+      }
+     else{
      window.alert('contract was not deployed to test network.')
    }
+   this.setState({loading:false})
+  }
 
-   this.setState({loading:  false})
+  buyTokens = (etherAmount) =>{
+    this.setState({loading: true})
+    this.state.swapCentral.methods.buyTokens().send({
+      from:this.state.account,
+      value: etherAmount}).on('transactionHash', (hash) =>{
+        this.setState({loading: false})
+      })
+  }
+
+  sellTokens = (centralTokenAmount) =>{
+    this.setState({loading: true})
+    this.state.centralToken.methods.approve('0x3EBDa8aBE340060668422B423eE3720765a183Db', centralTokenAmount).send({from:this.state.account}).on('transactionHash', (hash) =>{
+      this.state.swapCentral.methods.sellTokens(centralTokenAmount).send({from: this.state.account}).on('transactionHash', (hash) =>{
+          this.setState({loading: false})
+      })
+    })
 
   }
+
   constructor(props) {
       super(props)
       this.state = {
@@ -74,18 +96,31 @@ class App extends Component {
         loading: true
       }
     }
-  render(){
-  return (
 
+  render(){
+    let content
+    if(this.state.loading){
+      content = <p id="loader" className="text-center">Loading..</p>
+    }else{
+      console.log(this.state.ethBalance)
+
+      content = <Main ethBalance = {this.state.ethBalance}
+                      centralTokenBalance={this.state.centralTokenBalance}
+                      buyTokens ={this.buyTokens}
+                      sellTokens = {this.sellTokens}
+
+                />
+    }
+  return (
     <div>
       <Navbar account = {this.state.account} />
       <div className="container-fluid mt-5">
         <div className="row">
-          <main role="main" className="col-lg-12 d-flex text-center">
-            <div className="content mr-auto ml-auto">
-              <Main />
-            </div>
-          </main>
+         <main role="main" className="col-lg-12 d-flex text-center">
+          <div className="content mr-auto ml-auto">
+            {content}
+          </div>
+        </main>
         </div>
       </div>
 
